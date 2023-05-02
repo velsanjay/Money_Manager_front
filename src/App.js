@@ -1,25 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import {  Navigate, Route, Routes } from "react-router-dom";
+import SignUp from './Components.js/User/SignUp';
+import { ToastContainer } from 'react-toastify';
+import SignIn from './Components.js/User/SignIn';
+import Forget from './Components.js/User/forget';
+import Dasboard from './Components.js/User/Dasboard';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+      <Route path='/signup' element={<SignUp/>}/>
+      <Route path='/' element={<SignIn/>}/>
+      <Route path='/forget' element={<Forget/>}/>
+      <Route path='/dashboard/:id' element={<Dasboard/>}/>
+      <Route path='*' element={<Navigate to='/'/>}/>
+      </Routes>
+      <ToastContainer/>
     </div>
   );
 }
 
 export default App;
+
+
+export  const url = 'https://moneymanager-8bq5.onrender.com/'
