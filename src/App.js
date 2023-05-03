@@ -24,4 +24,4 @@ function App() {
 export default App;
 
 
-export  const url = 'https://moneymanager-8bq5.onrender.com/'
+export  const url = 'https://moneymanager-8bq5.onrender.com'
