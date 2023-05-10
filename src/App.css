@@ -59,5 +59,9 @@ body{
   margin: 20px;
   gap:3%;
   padding:17px;
-  /* border:1px solid #f2f5f5; */
+}
+@media (max-width : 800px){
+  .sigin{
+    margin: 30px 70px;
+  }
 }
