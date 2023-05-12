@@ -4,7 +4,6 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { url } from '../../App'
 import { toast } from 'react-toastify'
 import IncomeCard from '../IncomeCard.js/incomeCard'
-import { Button, TextField } from '@mui/material'
 import NewIncome from '../IncomeCard.js/newIncome'
 import NewExpence from '../ExpenceCart/NewExpence'
 
@@ -22,7 +21,6 @@ const Dasboard = () => {
              axios.post(`${url}/income/get`,payload).then((responce)=> {
                 if(responce.data.data.length > 0){
                     setIncome(responce.data.data)
-                    console.log(responce.data.data.length);
                     toast.success(responce.data.message)
                 }else{
                     toast.error("No Income Data Found!!!")
@@ -34,7 +32,6 @@ const Dasboard = () => {
              axios.post(`${url}/expence/get`,payload).then((responce)=> {
                 if(responce.data.data.length > 0){
                     setExpence(responce.data.data)
-                    console.log(responce.data.data.length);
                     toast.success(responce.data.message)
                 }else{
                     toast.error("No Expendure Data Found!!!")
@@ -45,7 +42,6 @@ const Dasboard = () => {
 
              axios.post(`${url}`,payload).then((responce)=> {
                     setUser(responce.data.data)
-                    console.log(responce.data);
                     toast.success(responce.data.message)
           
              } ).catch((error)=>{
@@ -53,10 +49,8 @@ const Dasboard = () => {
                 navigate('/')
              })
         }
-    },[NewExpence])
+    },[])
 
-    console.log(income);
-    console.log(expence);
     console.log(user);
   return (
     <div>
@@ -73,7 +67,7 @@ const Dasboard = () => {
                     user={user}
                     />
                 ) : (
-                    <p>User Not Found</p>
+                    <p>No Data Found!!!</p>
                 )}
                 </div>
         {income.length > 0 ? (
@@ -84,7 +78,7 @@ const Dasboard = () => {
                 />
             ))
         ) : (
-            <p>No Data Found</p>
+            <p>No Data Found!!!</p>
         )}
         </div>
         

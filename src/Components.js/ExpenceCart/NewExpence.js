@@ -25,8 +25,6 @@ const NewExpence = ({ user }) => {
             toast.success(res.data.message)
         } catch (error) {
             toast.error(error.response.data.message)
-            console.log(error);
-            console.log(userId);
         }
     }
     const handleChange = (event) => {

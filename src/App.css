@@ -60,8 +60,12 @@ body{
   gap:3%;
   padding:17px;
 }
-@media (max-width : 800px){
+@media (max-width : 900px){
   .sigin{
-    margin: 10px 40px;
+    margin: 10px 20px;
+  }
+  .header{
+    display: grid;
+    grid-template-columns: auto;
   }
 }
